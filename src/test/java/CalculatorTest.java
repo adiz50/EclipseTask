@@ -25,5 +25,7 @@ class CalculatorTest {
 
         Throwable exception = assertThrows(Exception.class , ()-> calculator.Add("-1,-2,3"));
         assertEquals("negatives not allowed: [-1, -2]",exception.getMessage());
+
+        assertEquals(10, calculator.Add("5\n1001    ,1002,4\n1"));
     }
 }

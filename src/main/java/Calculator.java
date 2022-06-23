@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class Calculator {
 
@@ -21,11 +20,15 @@ public class Calculator {
         nums.forEach(num -> numsInt.add(Integer.parseInt(num)));
 
         ArrayList<Integer> negative = new ArrayList<>();
+
         numsInt.forEach(n -> {
             if(n < 0) negative.add(n);
         });
 
+        numsInt.removeIf(n -> n >1000);
+
         if(!negative.isEmpty()) throw new Exception("negatives not allowed: "+ Arrays.toString(negative.toArray()));
+
         return numsInt.stream().mapToInt(Integer::intValue).sum();
     }
 }
