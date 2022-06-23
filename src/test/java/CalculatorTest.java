@@ -19,5 +19,6 @@ class CalculatorTest {
         assertEquals(1,calculator.Add("1"));
         assertEquals(3,calculator.Add("1,2"));
         assertEquals(10,calculator.Add("1,3,2,3,1"));
+        assertEquals(6,calculator.Add("1\n2,3"));
     }
 }
